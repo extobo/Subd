@@ -38,15 +38,9 @@ int main()
 
 
   try{
-    size_t sizeArr;
-
-    sizeArr = GetSize("Input size array: ");
-
-    size_t size = sizeArr;
-    int* NewArray = nullptr;
-
-
-      NewArray = InputArray(size);
+    size_t sizeArr = GetSize("Input size array: "), size = sizeArr;
+    
+    int* NewArray = InputArray(size);
 
       cout << ToString(NewArray, size);
 
@@ -80,9 +74,9 @@ size_t GetSize(const std::string& message)
     {
         throw std::out_of_range("Incorrect size. Value has to be greater or equal zero.");
     }
-    size_t newSize = static_cast<size_t>(size);
+    
 
-    return newSize;
+    return static_cast<size_t>(size);
 }
 
 int* InputArray(const size_t size_){
